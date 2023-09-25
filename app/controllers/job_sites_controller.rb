@@ -26,7 +26,7 @@ class JobSitesController < ApplicationController
   end
 
   def update
-    @job_site = JobSite.find(params[:1])
+    @job_site = JobSite.find(params[:id])
 
     if @job_site.update(job_site_params)
       redirect_to @job_site
@@ -36,7 +36,7 @@ class JobSitesController < ApplicationController
   end
 
   def destroy
-    @job_site = JobSite.find(params[:1])
+    @job_site = JobSite.find(params[:id])
     @job_site.destroy
 
     redirect_to root_path, status: :see_other
