@@ -12,4 +12,14 @@ eagerLoadControllersFrom("controllers", application)
 
 //= require jquery
 //= require datatables
+
+
+
+import "../datatables.min.js"
+
+
 console.log('index ready?')
+$( document ).ready(function() {
+    console.log("Set... Go!")
+    new DataTable('#job_site_dt');
+})

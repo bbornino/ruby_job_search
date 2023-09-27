@@ -1,19 +1,30 @@
 
+<div class="container-fluid p-1 bg-success text-white text-center">
+  <h1>Job Search Sites </h1>
+</div>
 
-<h1>JobSites#index</h1>
-<p id='hello'>Hola amiga!</p>
 
-<table id='dt'>
-    <tr>
-        <th>Site Name</th>
-        <th>Site URL</th>
-        <th>Resume Last Updated</th>
-    </tr>
-    <tr>
-        <td>Linked In</td>
-        <td>linkedin.com</td>
-        <td>Friday</td>
-    </tr>
-</table>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <%= link_to "New Job  Site", new_job_site_path, class:"btn btn-primary" %>
+        </div>
+    </div>
+    <table id='job_site_dt' class="table table-striped" style="width:100%">
+        <thead>
+            <th>Site Name</th>
+            <th>Site URL</th>
+            <th>Resume Last Updated</th>
+        </thead>
 
-<%= link_to "New Job Site", new_job_site_path %>
+        <tbody>
+        <% @job_sites.each do |job_site| %>
+        <tr>
+            <td><%= link_to job_site.name, job_site %></td>
+            <td><%= link_to job_site.url, job_site %></td>
+            <td><%= job_site.resume_updated_at %></td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
