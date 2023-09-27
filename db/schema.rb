@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_25_212027) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_27_133058) do
   create_table "job_sites", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_212027) do
     t.binary "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "last_visited_at"
   end
 
   create_table "search_engines", force: :cascade do |t|

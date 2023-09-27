@@ -1,11 +1,47 @@
-<h1><%= @job_site.title %></h1>
+<div class="container-fluid p-1 bg-primary text-white text-center">
+<h1><%= @job_site.name %></h1>
+</div>
 
-
-<p><%= @job_site.body %></p>
-<ul>
-  <li><%= link_to "Edit", edit_job_site_path(@article) %></li>
-  <li><%= link_to "Destroy", job_site_path(@article), data: {
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <%= link_to "Edit Site", edit_job_site_path(@job_site), class:"btn btn-primary" %>
+      <%= link_to "Destroy", job_site_path(@job_site), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+                  } %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <strong>URL</strong><br>
+      <%= @job_site.url %>
+    </div>
+    <div class="col">
+      <strong>Last Visited</strong><br>
+      <%= @job_site.last_visited_at %>
+    </div>
+    <div class="col">
+      <strong>Resume Last Updated</strong><br>
+      <%= @job_site.resume_updated_at %>
+    </div>
+  </div>
+<br>
+  <div class="row">
+    <div class="col">
+      <%= @job_site.description %>
+    </div>
+  </div>
+
+<br>
+  <div class="row">
+    <div class="col">
+    <strong>Review Comments</strong><br>
+      <%= @job_site.review_text %>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,23 +1,65 @@
+<div class="container mt-5">
 <%= form_with model: @job_site do |form| %>
+  <div class="row">
+    <div class="col">
+      <div class="input-group">
+        <label class="input-group">Name</label>
+        <%= form.text_field :name , class:"form-control" %>
+      </div>
+    </div>
+    <div class="col">
+      <div class="input-group">
+        <label class="input-group">URL</label>
+        <%= form.text_field :url , class:"form-control" %>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="input-group">
+        <label class="input-group">Last Visited</label>
+        <%= form.date_field :last_visited_at , class:"form-control" %>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="input-group">
+        <label class="input-group">Resume Updated</label>
+        <%= form.date_field :resume_updated_at , class:"form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
+        <%= form.label :description %>
+        <%= form.text_area :description, class:"form-control",style:"margin-top:5px!important" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
+        <%= form.label :review_text %>
+        <%= form.text_area :review_text, class:"form-control",style:"margin-top:5px!important" %>
+      </div>
+    </div>
+  </div>
+
   <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-<p>
-    <%= form.label :url %><br>
-    <%= form.text_field :url %>
+    To Add:
+    <ul>
+      <li>Git Hub Field?</li>
+      <li>Project Site Field?</li>
+      <li>Resume Format: PDF vs custom build</li>
+      <li>Rating: Stars!</li>
+      <li>Show the logo (and update new image)</li>
+      <li>Email Alert Info</li>
+      <li>Active?</li>
+    </ul>
   </p>
 
- <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description , cols: 50, rows: 10 %>
-  </p>
-
-  <p>
-    <%= form.label :review_text %><br>
-    <%= form.text_area :review_text , cols: 50, rows: 10 %>
-  </p>
   <p>
     <%= form.submit %>
   </p>
 <% end %>
+</div>

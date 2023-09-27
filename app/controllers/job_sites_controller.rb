@@ -44,6 +44,6 @@ class JobSitesController < ApplicationController
 
   private
   def job_site_params
-    params.require(:job_site).permit(:name, :url, :description, :review_text)
+    params.require(:job_site).permit(:name, :url, :last_visited_at, :resume_updated_at, :description, :review_text)
   end
 end
