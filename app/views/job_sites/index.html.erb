@@ -1,5 +1,5 @@
 
-<div class="container-fluid p-1 bg-success text-white text-center">
+<div class="container-fluid p-1 bg-primary text-white text-center">
   <h1>Job Search Sites </h1>
 </div>
 
@@ -21,8 +21,8 @@
         <% @job_sites.each do |job_site| %>
         <tr>
             <td><%= link_to job_site.name, job_site %></td>
-            <td><%= link_to job_site.url, job_site %></td>
-            <td><%= job_site.resume_updated_at %></td>
+            <td><%= job_site.url %></td>
+            <td><%= job_site.resume_updated_at.strftime("%a %b %d, %Y") %></td>
         </tr>
         <% end %>
         </tbody>
