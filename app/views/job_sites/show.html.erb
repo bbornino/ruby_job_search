@@ -32,28 +32,30 @@
   <br>
   <div class="row">
     <div class="col">
+    <strong>Review Headline</strong><br>
+      <%= @job_site.review_text %>
+    </div>
+  </div>
+  
+  <br>
+  <div class="row">
+    <div class="col">
+      <strong>Review Details</strong><br>
       <%= @job_site.description %>
     </div>
   </div>
 
-  <br>
-  <div class="row">
-    <div class="col">
-    <strong>Review Comments</strong><br>
-      <%= @job_site.review_text %>
-    </div>
-  </div>
+  
 </div>
 
 <div class="container mt-5">
-<h2>Add a Job Listing:</h2>
+<h2>Add a Job Listing</h2>
   <%= render 'job_postings/form' %>
+</div>
 
+<div class="container mt-5">
   <h2>Job Listings Applied</h2>
-  <%= render @job_site.job_postings %>
-
-
-    <table id='job_site_dt' class="table table-striped" style="width:100%">
+  <table id='job_site_dt' class="table table-striped" style="width:100%">
         <thead>
             <th>Company Name</th>
             <th>Posting Title</th>

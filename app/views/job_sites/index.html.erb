@@ -7,13 +7,14 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <%= link_to "New Job  Site", new_job_site_path, class:"btn btn-primary" %>
+            <%= link_to "New Job Site", new_job_site_path, class:"btn btn-primary" %>
         </div>
     </div>
     <table id='job_site_dt' class="table table-striped" style="width:100%">
         <thead>
             <th>Site Name</th>
             <th>Site URL</th>
+            <th>Review Headline</th>
             <th>Resume Last Updated</th>
         </thead>
 
@@ -22,6 +23,7 @@
         <tr>
             <td><%= link_to job_site.name, job_site %></td>
             <td><%= job_site.url %></td>
+            <td><%= job_site.review_text %></td>
             <td><%= job_site.resume_updated_at.strftime("%a %b %d, %Y")  %></td>
         </tr>
         <% end %>
