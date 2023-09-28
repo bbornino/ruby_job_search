@@ -53,5 +53,25 @@
   <%= render @job_site.job_postings %>
 
 
+    <table id='job_site_dt' class="table table-striped" style="width:100%">
+        <thead>
+            <th>Company Name</th>
+            <th>Posting Title</th>
+            <th>Posting Type</th>
+            <th>Posting City</th>
+            <th>Applied On</th>
+            <th>Actions</th>
+        </thead>
+
+        <% unless @job_site.job_postings.nil? %>
+        <tbody>
+
+          <%= render 'job_postings/job_posting' %>
+
+        </tbody>
+        <% end %>
+    </table>
+
+
 </div>
 

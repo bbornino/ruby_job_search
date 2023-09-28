@@ -1,30 +1,17 @@
+<% @job_site.job_postings.each do |job_posting| %>
+  <tr>
+    <td><%= job_posting.company_name %></td>
+    <td><%= job_posting.posting_title %></td>
+    <td><%= job_posting.posting_location_type %></td>
+    <td><%= job_posting.posting_location_city %></td>
+    <td><%= unless job_posting.applied_at.nil? 
+              job_posting.applied_at.strftime("%a %b %d, %Y") 
+              end %></td>
+    <td><%= link_to "Destroy Posting", [job_posting.job_site, job_posting], data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+  </tr>
+<% end %>
 
-  <p>
-    <strong>Company Name:</strong>
-    <%= job_posting.company_name %>
-  </p>
 
-  <p>
-    <strong>Posting Title:</strong>
-    <%= job_posting.posting_title %>
-  </p>
-
-  <p>
-    <strong>Location Type:</strong>
-    <%= job_posting.posting_location_type %>
-  </p>
-  <p>
-    <strong>Location City:</strong>
-    <%= job_posting.posting_location_city %>
-  </p>
-  <p>
-    <strong>Applied On:</strong>
-    <%= job_posting.applied_at %>
-  </p>
-
-  <p>
-    <%= link_to "Destroy Posting", [job_posting.job_site, job_posting], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %>
-  </p>
