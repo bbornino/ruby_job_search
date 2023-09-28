@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_27_133058) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_28_143019) do
+  create_table "job_postings", force: :cascade do |t|
+    t.string "company_name"
+    t.string "company_url"
+    t.string "posting_title"
+    t.string "posting_id"
+    t.string "posting_url"
+    t.string "posting_location_city"
+    t.string "posting_location_type"
+    t.text "posting_comments"
+    t.datetime "applied_at"
+    t.datetime "rejected_at"
+    t.binary "company_logo"
+    t.integer "job_site_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_site_id"], name: "index_job_postings_on_job_site_id"
+  end
+
   create_table "job_sites", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -42,4 +60,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_133058) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "job_postings", "job_sites"
 end

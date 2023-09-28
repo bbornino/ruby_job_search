@@ -1,0 +1,30 @@
+
+  <p>
+    <strong>Company Name:</strong>
+    <%= job_posting.company_name %>
+  </p>
+
+  <p>
+    <strong>Posting Title:</strong>
+    <%= job_posting.posting_title %>
+  </p>
+
+  <p>
+    <strong>Location Type:</strong>
+    <%= job_posting.posting_location_type %>
+  </p>
+  <p>
+    <strong>Location City:</strong>
+    <%= job_posting.posting_location_city %>
+  </p>
+  <p>
+    <strong>Applied On:</strong>
+    <%= job_posting.applied_at %>
+  </p>
+
+  <p>
+    <%= link_to "Destroy Posting", [job_posting.job_site, job_posting], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+  </p>
