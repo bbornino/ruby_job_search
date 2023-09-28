@@ -4,7 +4,7 @@
     <div class="col">
       <div class="input-group">
         <label class="input-group">Name</label>
-        <%= form.text_field :name , class:"form-control" %>
+        <%= form.text_field :name , class:"form-control", :required => true %>
       </div>
     </div>
     <div class="col">
@@ -16,14 +16,35 @@
     <div class="col-2">
       <div class="input-group">
         <label class="input-group">Last Visited</label>
-        <%= form.date_field :last_visited_at , class:"form-control" %>
+        <%= form.date_field :last_visited_at , class:"form-control", :required => true %>
       </div>
     </div>
     <div class="col-2">
       <div class="input-group">
         <label class="input-group">Resume Updated</label>
-        <%= form.date_field :resume_updated_at , class:"form-control" %>
+        <%= form.date_field :resume_updated_at , class:"form-control", :required => true %>
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      Resume Format Drop Down
+    </div>
+    <div class="col">
+      Git Hub Field?
+    </div>
+    <div class="col">
+      Project Site Field?
+    </div>
+    <div class="col">
+      Rating Val (1 to 5 star)
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      Review Headline (30 char tops)
     </div>
   </div>
 
@@ -48,10 +69,6 @@
   <p>
     To Add:
     <ul>
-      <li>Git Hub Field?</li>
-      <li>Project Site Field?</li>
-      <li>Resume Format: PDF vs custom build</li>
-      <li>Rating: Stars!</li>
       <li>Show the logo (and update new image)</li>
       <li>Email Alert Info</li>
       <li>Active?</li>

@@ -22,21 +22,21 @@
     </div>
     <div class="col">
       <strong>Last Visited</strong><br>
-      <%= @job_site.last_visited_at %>
+      <%= @job_site.last_visited_at.strftime("%a %b %d, %Y") %>
     </div>
     <div class="col">
       <strong>Resume Last Updated</strong><br>
-      <%= @job_site.resume_updated_at %>
+      <%= @job_site.resume_updated_at.strftime("%a %b %d, %Y") %>
     </div>
   </div>
-<br>
+  <br>
   <div class="row">
     <div class="col">
       <%= @job_site.description %>
     </div>
   </div>
 
-<br>
+  <br>
   <div class="row">
     <div class="col">
     <strong>Review Comments</strong><br>
@@ -45,5 +45,13 @@
   </div>
 </div>
 
+<div class="container mt-5">
+<h2>Add a Job Listing:</h2>
+  <%= render 'job_postings/form' %>
 
+  <h2>Job Listings Applied</h2>
+  <%= render @job_site.job_postings %>
+
+
+</div>
 
