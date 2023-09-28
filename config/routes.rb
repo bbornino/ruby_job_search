@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "job_sites#index"
+  resources :job_postings
   resources :job_sites do
     resources :job_postings
   end
+
+  
 end

@@ -1,77 +1,48 @@
 <div class="container mt-5">
     <%= form_with model: [ @job_site, @job_site.job_postings.build ] do |form| %>
     <div class="row">
-        <div class="col">
+        
+        <div class="col-3">
             <div class="input-group">
-                <label class="input-group">Company Name</label>
+                <label class="input-group"><strong>Company Name</strong></label>
                 <%= form.text_field :company_name , class:"form-control", :required => true %>
             </div>
         </div>
-        <div class="col">
+        <%= form.hidden_field :company_url, value: "" %>
+        <div class="col-4">
             <div class="input-group">
-                <label class="input-group">Company URL</label>
-                <%= form.text_field :company_url , class:"form-control", :required => true %>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="input-group">
-                <label class="input-group">Posting Title</label>
+                <label class="input-group"><strong>Posting Title</strong></label>
                 <%= form.text_field :posting_title , class:"form-control", :required => true %>
             </div>
         </div>
-        <div class="col">
+        <%= form.hidden_field :posting_url, value: "" %>
+        <div class="col-3">
             <div class="input-group">
-                <label class="input-group">Posting URL</label>
-                <%= form.text_field :posting_url , class:"form-control", :required => true %>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group">
-                <label class="input-group">Posting ID</label>
-                <%= form.text_field :posting_id , class:"form-control", :required => true %>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <div class="input-group">
-                <label class="input-group">Posting Location City</label>
+                <label class="input-group"><strong>Location City</strong></label>
                 <%= form.text_field :posting_location_city , class:"form-control", :required => true %>
             </div>
         </div>
-        <div class="col">
+        <div class="col-2">
             <div class="input-group">
-                <label class="input-group">Posting Location Type</label>
-                <%= form.select :posting_location_type, ['On-Site', 'Hybrid', 'Remote'], selected: 'On-Site' %>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group">
-                <label class="input-group">Applied On</label>
-                <%= form.text_field :applied_at , class:"form-control", :required => true %>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group">
-                <label class="input-group">Rejected On</label>
-                <%= form.text_field :rejected_at , class:"form-control", :required => true %>
+                <label class="input-group"><strong>Location Type</strong></label>
+                <%= form.select :posting_location_type, ['On-Site', 'Hybrid', 'Remote'] %>
             </div>
         </div>
     </div>
+    <%= form.hidden_field :employment_type, value: "" %>
+    <%= form.hidden_field :posting_id, value: "" %>
+    <%= form.hidden_field :pay_range, value: "" %>
+    <%= form.hidden_field :applied_at, value: "" %>
+    <%= form.hidden_field :rejected_at, value: "" %>
+    <%= form.hidden_field :archive, value: "" %>
+    <%= form.hidden_field :posting_comments, value: "" %>
+
+
     <div class="row">
-        <div class="col">
-            <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
-                <%= form.label :posting_comments %>
-                <%= form.text_area :posting_comments, class:"form-control",style:"margin-top:5px!important" %>
-            </div>
+        <div class="col-3">
+            <%= form.submit %>
         </div>
     </div>
-    <p>
-        <%= form.submit %>
-    </p>
     <% end %>
 </div>
 

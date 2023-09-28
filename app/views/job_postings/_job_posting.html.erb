@@ -1,4 +1,8 @@
 <% @job_site.job_postings.each do |job_posting| %>
+  <% if job_posting.company_name.nil? 
+        next
+      end
+  %>
   <tr>
     <td><%= job_posting.company_name %></td>
     <td><%= job_posting.posting_title %></td>
@@ -7,10 +11,12 @@
     <td><%= unless job_posting.applied_at.nil? 
               job_posting.applied_at.strftime("%a %b %d, %Y") 
               end %></td>
-    <td><%= link_to "Destroy Posting", [job_posting.job_site, job_posting], data: {
+    <td>
+    <a href="/job_postings/<%= job_posting.id %>/edit">Edit</a>
+    <%= link_to "Destroy", [job_posting.job_site, job_posting], data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></td>
+                  } %></td></td>
   </tr>
 <% end %>
 
