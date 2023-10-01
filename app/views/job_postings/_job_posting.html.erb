@@ -8,12 +8,15 @@
     <td><%= job_posting.posting_title %></td>
     <td><%= job_posting.posting_location_type %></td>
     <td><%= job_posting.posting_location_city %></td>
-    <td><%= unless job_posting.applied_at.nil? 
-              job_posting.applied_at.strftime("%a %b %d, %Y") 
+    <td data-order="<%= unless job_posting.applied_at.nil? 
+              job_posting.applied_at.strftime("%F %T") 
+              end %>" >
+              <%= unless job_posting.applied_at.nil? 
+              job_posting.applied_at.strftime("%a %b %d, %Y %r") 
               end %></td>
     <td>
     <a href="/job_postings/<%= job_posting.id %>/edit">Edit</a>
-    <%= link_to "Destroy", [job_posting.job_site, job_posting], data: {
+    <%= link_to "Delete", [job_posting.job_site, job_posting], data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></td></td>

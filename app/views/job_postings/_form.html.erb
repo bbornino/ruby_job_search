@@ -32,7 +32,7 @@
     <%= form.hidden_field :employment_type, value: "" %>
     <%= form.hidden_field :posting_id, value: "" %>
     <%= form.hidden_field :pay_range, value: "" %>
-    <%= form.hidden_field :applied_at, value: "" %>
+    <%= form.hidden_field :applied_at, value: Time.current.getlocal %>
     <%= form.hidden_field :rejected_at, value: "" %>
     <%= form.hidden_field :archive, value: "" %>
     <%= form.hidden_field :posting_comments, value: "" %>

@@ -18,8 +18,10 @@ eagerLoadControllersFrom("controllers", application)
 import "../datatables.min.js"
 
 
-console.log('index ready?')
+console.log('index.js ready?')
 $( document ).ready(function() {
-    console.log("Set... Go!")
-    new DataTable('#job_site_dt');
+    console.log("index.js ready func")
+    new DataTable('#job_site_dt', {
+        order: [[4, 'desc']]
+    });
 })
