@@ -1,13 +1,13 @@
 <div class="container mt-5">
 <%= form_with model: @job_site do |form| %>
   <div class="row">
-    <div class="col">
+    <div class="col-5">
       <div class="input-group">
         <label class="input-group"><strong>Name</strong></label>
         <%= form.text_field :name , class:"form-control", :required => true %>
       </div>
     </div>
-    <div class="col">
+    <div class="col-5">
       <div class="input-group">
         <label class="input-group"><strong>URL</strong></label>
         <%= form.text_field :url , class:"form-control" %>
@@ -15,30 +15,43 @@
     </div>
     <div class="col-2">
       <div class="input-group">
-        <label class="input-group"><strong>Last Visited</strong></label>
-        <%= form.date_field :last_visited_at , class:"form-control", :required => true %>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="input-group">
-        <label class="input-group"><strong>Resume Updated</strong></label>
-        <%= form.date_field :resume_updated_at , class:"form-control", :required => true %>
+        <label class="input-group"><strong>Rating (1-20)</strong></label>
+        <%= form.number_field :rating , in: 1..20, 
+                class:"form-control", :required => true %>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col">
-      Resume Format Drop Down
+    <div class="col-2">
+      <div class="input-group">
+          <label class="input-group"><strong>Resume Format</strong></label>
+          <%= form.select :resume_format , ['Builder Only', 'PDF Only', 'Both'] %>
+      </div>
     </div>
-    <div class="col">
-      Git Hub Field?
+    <div class="col-4">
+      <div class="input-group form-check">
+        <%= form.check_box :github_field , class:"form-check-input" %>
+        <%= form.label :github_field , " Has Git Hub Field", class:"form-check-label fw-bolder" %>
+      </div>
+      <div class="input-group form-check">
+        <%= form.check_box :project_site_field , class:"form-check-input"  %>
+        <%= form.label :project_site_field , " Has Project Site Field", class:"form-check-label" %>
+      </div>
     </div>
-    <div class="col">
-      Project Site Field?
+
+
+    <div class="col-3">
+      <div class="input-group">
+        <label class="input-group"><strong>Last Visited</strong></label>
+        <%= form.date_field :last_visited_at , class:"form-control", :required => true %>
+      </div>
     </div>
-    <div class="col">
-      Rating Val (1 to 5 star)
+    <div class="col-3">
+      <div class="input-group">
+        <label class="input-group"><strong>Resume Updated</strong></label>
+        <%= form.date_field :resume_updated_at , class:"form-control", :required => true %>
+      </div>
     </div>
   </div>
 
@@ -47,7 +60,7 @@
     <div class="col">
       <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
         <label class="input-group"><strong>Review Headline</strong></label>
-        <%= form.text_area :review_text, class:"form-control",style:"margin-top:5px!important" %>
+        <%= form.text_area :review_text, class:"form-control", rows: 1, style:"margin-top:5px!important" %>
       </div>
     </div>
   </div>
@@ -56,21 +69,18 @@
     <div class="col">
       <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
         <label class="input-group"><strong>Review Details</strong></label>
-        <%= form.text_area :description, class:"form-control",style:"margin-top:5px!important" %>
+        <%= form.text_area :description, class:"form-control", rows: 10, style:"margin-top:5px!important" %>
       </div>
     </div>
   </div>
 
-  
-
-  <p>
+  <%# <p>
     To Add:
     <ul>
       <li>Show the logo (and update new image)</li>
-      <li>Email Alert Info</li>
       <li>Active?</li>
     </ul>
-  </p>
+  </p> %>
 
   <p>
     <%= form.submit %>
