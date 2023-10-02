@@ -30,3 +30,13 @@
         </tbody>
     </table>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // JavaScript, NOT jquery... jquery not likely loaded yet!
+
+  console.log("job_sites/index.html.js ready func")
+      new DataTable('#job_site_dt', {
+        order: [[2, 'asc']]
+    });
+});
+</script>

@@ -10,18 +10,9 @@ eagerLoadControllersFrom("controllers", application)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 
-//= require jquery
-//= require datatables
-
-
-
+import "../jquery-3.7.1.min.js"
+import "../bootstrap.min.js"
 import "../datatables.min.js"
 
+console.log('app/js/controllers/index.js Complete')
 
-console.log('index.js ready?')
-$( document ).ready(function() {
-    console.log("index.js ready func")
-    new DataTable('#job_site_dt', {
-        order: [[4, 'desc']]
-    });
-})

@@ -76,4 +76,12 @@
 
 
 </div>
-
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // JavaScript, NOT jquery... jquery not likely loaded yet!
+  console.log("job_sites/show.html.js ready func")
+      new DataTable('#postings_dt', {
+        order: [[4, 'desc']]
+    });
+});
+</script>
