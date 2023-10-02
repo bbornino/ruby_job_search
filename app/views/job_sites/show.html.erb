@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col">
       <%= link_to "Edit Site", edit_job_site_path(@job_site), class:"btn btn-primary" %>
-      <%= link_to "Destroy", job_site_path(@job_site), data: {
+      <%= link_to "Destroy", job_site_path(@job_site), class:"btn btn-danger", data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>
@@ -16,6 +16,10 @@
     <div class="col">
       <strong>URL</strong><br>
       <%= @job_site.url %>
+    </div>
+    <div class="col">
+      <strong>Rating</strong><br>
+      <%= @job_site.rating %>
     </div>
     <div class="col">
       <strong>Last Visited</strong><br>
@@ -29,8 +33,7 @@
   <br>
   <div class="row">
     <div class="col">
-    <strong>Review Headline</strong><br>
-      <%= @job_site.review_text %>
+    <strong>Review Headline</strong>: <%= @job_site.review_text %>       
     </div>
   </div>
   
@@ -46,13 +49,13 @@
 </div>
 
 <div class="container mt-5">
-<h2>Add a Job Listing</h2>
+<h2>Add a Job Posting</h2>
   <%= render 'job_postings/form' %>
 </div>
 
 <div class="container mt-5">
-  <h2>Job Listings Applied</h2>
-  <table id='job_site_dt' class="table table-striped" style="width:100%">
+  <h2>Job Postings Applied</h2>
+  <table id='postings_dt' class="table table-striped" style="width:100%">
         <thead>
             <th>Company Name</th>
             <th>Posting Title</th>
