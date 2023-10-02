@@ -86,6 +86,14 @@
     <div class="row">
         <div class="col">
             <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
+                <%= form.label :technology_stack %>
+                <%= form.text_field :technology_stack , class:"form-control", style:"margin-top:5px!important", :required => true %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
                 <%= form.label :posting_comments %>
                 <%= form.text_area :posting_comments, rows: 10, class:"form-control",style:"margin-top:5px!important" %>
             </div>
