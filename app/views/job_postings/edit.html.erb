@@ -61,7 +61,7 @@
         <div class="col">
             <div class="input-group">
                 <label class="input-group">Pay Range</label>
-                <%= form.text_field :pay_range , class:"form-control" %>
+                <%= form.text_field :pay_range , class:"form-control", :required => true %>
             </div>
         </div>
         <div class="col">
@@ -87,12 +87,13 @@
         <div class="col">
             <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
                 <%= form.label :posting_comments %>
-                <%= form.text_area :posting_comments, class:"form-control",style:"margin-top:5px!important" %>
+                <%= form.text_area :posting_comments, rows: 10, class:"form-control",style:"margin-top:5px!important" %>
             </div>
         </div>
     </div>
     <p>
         <%= form.submit %>
+        <strong>Need a back / Cancel button here!  And maybe the primary tech for the position?  PHP? Python? Ruby? Other?</strong>
     </p>
     <% end %>
 </div>

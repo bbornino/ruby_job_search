@@ -1,0 +1,38 @@
+<div class="container-fluid p-1 bg-primary text-white text-center">
+  <h3>Job Posting: <%= @job_posting.company_name %> <%= @job_posting.posting_title %></h3>
+
+
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <%= link_to "Edit Posting", edit_job_posting_path(@job_posting), class:"btn btn-primary" %>
+        </div>
+    </div>
+
+    <dl class="row mt-5">
+        <dt class="col-sm-2">Company Name</dt>
+        <dd class="col-sm-4"><%= @job_posting.company_name %></dd>
+        <dt class="col-sm-2"> Posting Title </dt>
+        <dd class="col-sm-4"><%= @job_posting.posting_title %></dd>
+
+        <dt class="col-sm-2"> Posting City </dt>
+        <dd class="col-sm-4"><%= @job_posting.posting_location_city %></dd>
+        <dt class="col-sm-2"> Location Type </dt>
+        <dd class="col-sm-4"><%= @job_posting.posting_location_type %></dd>
+
+        <dt class="col-sm-2"> Employment Type </dt>
+        <dd class="col-sm-4"><%= @job_posting.employment_type %></dd>
+        <dt class="col-sm-2"> Pay Range </dt>
+        <dd class="col-sm-4"><%= @job_posting.pay_range %></dd>
+
+        <dt class="col-sm-2"> Applied On </dt>
+        <dd class="col-sm-4"><%= @job_posting.applied_at %></dd>
+        <dt class="col-sm-2"> Rejected On </dt>
+        <dd class="col-sm-4"><%= @job_posting.rejected_at %></dd>
+
+        <dt class="col-sm-2"> Posting Comments </dt>
+        <dd class="col-sm-10"><%= @job_posting.posting_comments %></dd>
+    </dl>
+</div>

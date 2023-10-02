@@ -1,0 +1,41 @@
+<div class="container-fluid p-1 bg-primary text-white text-center">
+  <h1>Job Postings Applied </h1>
+</div>
+
+
+<div class="container mt-5">
+    <table id='job_postings_dt' class="table table-striped" style="width:100%">
+        <thead>
+            <th>Company Name</th>
+            <th>Posting Title</th>
+            <th>Location Type</th>
+            <th>Applied On</th>
+        </thead>
+
+        <tbody>
+        <% @job_postings.each do |job_posting| %>
+        <tr>
+          <td><%= link_to job_posting.company_name, job_posting %></td>
+          <td><%= job_posting.posting_title %></td>
+          <td><%= job_posting.posting_location_type %></td>
+          <td data-order="<%= unless job_posting.applied_at.nil? 
+              job_posting.applied_at.strftime("%F %T") 
+              end %>" >
+                <%= unless job_posting.applied_at.nil? 
+                job_posting.applied_at.strftime("%a %b %d, %Y %r") 
+                end %>
+          </td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // JavaScript, NOT jquery... jquery not likely loaded yet!
+  console.log("Hello World!");
+  console.log("index.js ready func")
+      new DataTable('#job_postings_dt', {
+    });
+});
+</script>
