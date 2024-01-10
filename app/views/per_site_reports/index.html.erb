@@ -1,0 +1,23 @@
+
+<div class="container-fluid p-1 bg-primary text-white text-center">
+  <h1>Job Search Sites </h1>
+</div>
+
+
+<div class="container mt-5">
+    <table id='job_site_dt' class="table table-striped" style="width:100%">
+        <thead>
+            <th>Site Name</th>
+            <th>Site Count</th>
+        </thead>
+
+        <tbody>
+        <% @reportData.each do |report_row| %>
+        <tr>
+            <td><%= report_row['name'] %></td>
+            <td><%= report_row['site_count'] %></td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>

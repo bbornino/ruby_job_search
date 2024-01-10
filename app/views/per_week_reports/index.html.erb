@@ -1,0 +1,25 @@
+<div class="p-15 text-center">
+  <h1>Applications Per Week </h1>
+</div>
+
+<div class="container mt-5">    
+    <table id='per_week_dt' class="table table-striped" style="width:100%">
+        <thead>
+            <th>Year</th>
+            <th>Week</th>
+            <th>Month</th>
+            <th>Week Count</th>
+        </thead>
+
+        <tbody>
+        <% @reportData.each do |report_row| %>
+        <tr>
+            <td><%= report_row['year'] %></td>
+            <td><%= report_row['week'] %></td>
+            <td><%= report_row['month'] %></td>
+            <td><%= report_row['week_count'] %></td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>

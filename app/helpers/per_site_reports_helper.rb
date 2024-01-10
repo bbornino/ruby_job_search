@@ -1,0 +1,2 @@
+module PerSiteReportsHelper
+end

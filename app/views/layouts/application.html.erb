@@ -11,29 +11,32 @@
   </head>
 
   <body>
-<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">B's Job Search App</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/job_sites">Search Sites</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/job_postings">Postings Applied</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="/job_postings">Report</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">B's Job Search App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/job_sites">Search Sites</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/job_postings">Postings Applied</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/per_week_reports">Per Week Report</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/per_site_reports">Per Site Report</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

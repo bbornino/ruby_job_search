@@ -1,0 +1,2 @@
+module PerWeekReportsHelper
+end
