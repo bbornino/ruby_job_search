@@ -16,7 +16,7 @@
             <th>Site URL</th>
             <th>Rating</th>
             <th>Review Headline</th>
-            <th>Resume Last Updated</th>
+            <th>Site Last Visted</th>
         </thead>
 
         <tbody>
@@ -26,7 +26,7 @@
             <td><%= job_site.url %></td>
             <td><%= job_site.rating %></td>
             <td><%= job_site.review_text %></td>
-            <td><%= job_site.resume_updated_at.strftime("%a %b %d, %Y")  %></td>
+            <td><%= job_site.last_visited_at.strftime("%a %b %d, %Y")  %></td>
         </tr>
         <% end %>
         </tbody>
@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("job_sites/index.html.js ready func")
       new DataTable('#job_site_dt', {
-        order: [[2, 'asc']]
+        order: [[2, 'asc']],
+        "pageLength": 25
     });
 });
 </script>

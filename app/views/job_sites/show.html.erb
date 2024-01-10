@@ -15,7 +15,7 @@
   <div class="row">
     <div class="col">
       <strong>URL</strong><br>
-      <%= @job_site.url %>
+      <a href="<%= @job_site.url %>"> <%= @job_site.url %></a>
     </div>
     <div class="col">
       <strong>Rating</strong><br>
@@ -82,6 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("job_sites/show.html.js ready func")
       new DataTable('#postings_dt', {
         order: [[4, 'desc']]
-    });
+  });
+
+  // $("body").bind("DOMSubtreeModified", function() {
+  //   alert("tree changed");
+  // });   // executes when the SEARCH box is used.  But not before then.
 });
 </script>
