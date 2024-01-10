@@ -73,7 +73,7 @@
         <div class="col">
             <div class="input-group">
                 <label class="input-group">Rejected On</label>
-                <%= form.date_field :rejected_at , class:"form-control" %>
+                <%= form.datetime_field :rejected_at , class:"form-control" %>
             </div>
         </div>
         <div class="col">
@@ -105,5 +105,11 @@
     </p>
     <% end %>
 </div>
-
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // JavaScript, NOT jquery... jquery not likely loaded yet!
+        console.log("Edit Posting Mode!");
+        console.log("index.js ready func")
+});
+</script>
 <%# add archived, pay range, company logo %>

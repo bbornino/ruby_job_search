@@ -9,7 +9,9 @@
             <th>Company Name</th>
             <th>Posting Title</th>
             <th>Location Type</th>
+            <th>Pay Range</th>
             <th>Applied On</th>
+            <th>Rejected On</th>
         </thead>
 
         <tbody>
@@ -18,11 +20,19 @@
           <td><%= link_to job_posting.company_name, job_posting %></td>
           <td><%= job_posting.posting_title %></td>
           <td><%= job_posting.posting_location_type %></td>
+          <td><%= job_posting.pay_range %></td>
           <td data-order="<%= unless job_posting.applied_at.nil? 
               job_posting.applied_at.strftime("%F %T") 
               end %>" >
                 <%= unless job_posting.applied_at.nil? 
                 job_posting.applied_at.strftime("%a %b %d, %Y %r") 
+                end %>
+          </td>
+          <td data-order="<%= unless job_posting.rejected_at.nil? 
+              job_posting.rejected_at.strftime("%F %T") 
+              end %>" >
+                <%= unless job_posting.rejected_at.nil? 
+                job_posting.rejected_at.strftime("%a %b %d, %Y %r") 
                 end %>
           </td>
         </tr>
