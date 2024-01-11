@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "job_sites#index"
+  get 'intro', to: 'static_pages#intro'
+  get 'tips', to: 'static_pages#tips'
   resources :per_site_reports
   resources :per_week_reports
   resources :job_postings
