@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row pt-3">
         <div class="col">
             <div class="input-group">
                 <label class="input-group">Posting Title</label>
@@ -30,7 +30,7 @@
         
     </div>
 
-    <div class="row">
+    <div class="row pt-3">
         <div class="col">
             <div class="input-group">
                 <label class="input-group">Posting Location City</label>
@@ -39,25 +39,32 @@
         </div>
         <div class="col">
             <div class="input-group">
-                <label class="input-group">Posting Location Type</label>
+                <label class="input-group">Posting ID</label>
+                <%= form.text_field :posting_id , class:"form-control" %>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="input-group">
+                <label class="input-group">Location Type</label>
                 <%= form.select :posting_location_type, ['On-Site', 'Hybrid', 'Remote'] %>
             </div>
         </div>
-        <div class="col">
+        <div class="col-2">
             <div class="input-group">
                 <label class="input-group">Employment Type</label>
                 <%= form.select :employment_type, ['Full-time', 'Freelance', 'Contract'] %>
             </div>
         </div>
-        <div class="col">
-            <div class="input-group">
-                <label class="input-group">Posting ID</label>
-                <%= form.text_field :posting_id , class:"form-control" %>
+        <div class="col-2">
+            <div class="input-group form-check">
+                <%= form.check_box :archive , class:"form-check-input"  %>
+                <%= form.label :archive , " Archive", class:"form-check-label" %>
             </div>
         </div>
+
     </div>
 
-    <div class="row">
+    <div class="row pt-3">
         <div class="col">
             <div class="input-group">
                 <label class="input-group">Pay Range</label>
@@ -78,22 +85,24 @@
         </div>
         <div class="col">
             <div class="input-group">
-                <label class="input-group">Archive</label>
-                <%= form.text_field :archive , class:"form-control" %>
+                <label class="input-group">Interviewed On</label>
+                <%= form.datetime_field :interviewed_at , class:"form-control" %>
             </div>
         </div>
+
     </div>
-    <div class="row">
+    
+    <div class="row mt-3">
         <div class="col">
-            <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
+            <div class="  w3-padding w3-round ws-grey w3-border w3-padding-16">
                 <%= form.label :technology_stack %>
                 <%= form.text_field :technology_stack , class:"form-control", style:"margin-top:5px!important", :required => true %>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row my-3">
         <div class="col">
-            <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
+            <div class="  w3-padding w3-round ws-grey w3-border w3-padding-16">
                 <%= form.label :posting_comments %>
                 <%= form.text_area :posting_comments, rows: 10, class:"form-control",style:"margin-top:5px!important" %>
             </div>
