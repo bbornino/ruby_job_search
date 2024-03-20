@@ -1,13 +1,19 @@
-<div class="container mt-5">
+<div class="container mt-3">
     <%= form_with model:@job_posting   do |form| %>
+    <div class="row mt-3 mb-3" style="position:sticky; display: flex; top: 4rem; z-index:10; background: rgba(252, 252, 252, 1) !important;">
+        <div class="col mt-3 mb-3" style="background: white !important;">
+            <%= form.submit  %>
+            <%= link_to '<button>Back</button>'.html_safe, 'javascript:history.back()', class:'ml-2 float-right' %>
+        </div>
+    </div>
     <div class="row">
-        <div class="col">
+        <div class="col-sm-12 col-md-6">
             <div class="input-group">
                 <label class="input-group">Company Name</label>
                 <%= form.text_field :company_name , class:"form-control", :required => true %>
             </div>
         </div>
-        <div class="col">
+        <div class="col-sm-12 col-md-6">
             <div class="input-group">
                 <label class="input-group">Company URL</label>
                 <%= form.text_field :company_url , class:"form-control" %>
@@ -15,13 +21,13 @@
         </div>
     </div>
     <div class="row pt-3">
-        <div class="col">
+        <div class="col-sm-12 col-md-6">
             <div class="input-group">
                 <label class="input-group">Posting Title</label>
                 <%= form.text_field :posting_title , class:"form-control", :required => true %>
             </div>
         </div>
-        <div class="col">
+        <div class="col-sm-12 col-md-6">
             <div class="input-group">
                 <label class="input-group">Posting URL</label>
                 <%= form.text_field :posting_url , class:"form-control" %>
@@ -31,62 +37,63 @@
     </div>
 
     <div class="row pt-3">
-        <div class="col">
+        <div class="col-6">
             <div class="input-group">
                 <label class="input-group">Posting Location City</label>
                 <%= form.text_field :posting_location_city , class:"form-control", :required => true %>
             </div>
         </div>
-        <div class="col">
+        <!--div class="col">
             <div class="input-group">
                 <label class="input-group">Posting ID</label>
                 <%= form.text_field :posting_id , class:"form-control" %>
             </div>
-        </div>
-        <div class="col-2">
+        </div-->
+        <div class="col-3">
             <div class="input-group">
                 <label class="input-group">Location Type</label>
                 <%= form.select :posting_location_type, ['On-Site', 'Hybrid', 'Remote'] %>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <div class="input-group">
                 <label class="input-group">Employment Type</label>
                 <%= form.select :employment_type, ['Full-time', 'Freelance', 'Contract'] %>
             </div>
         </div>
-        <div class="col-2">
+        <!--div class="col-2">
             <div class="input-group form-check">
                 <%= form.check_box :archive , class:"form-check-input"  %>
                 <%= form.label :archive , " Archive", class:"form-check-label" %>
             </div>
-        </div>
+        </div-->
 
     </div>
 
     <div class="row pt-3">
-        <div class="col">
+        <div class="col-sm-6 col-md-3">
             <div class="input-group">
                 <label class="input-group">Pay Range</label>
                 <%= form.text_field :pay_range , class:"form-control", :required => true %>
             </div>
         </div>
-        <div class="col">
+        <div class="col-sm-6 col-md-3">
             <div class="input-group">
                 <label class="input-group">Applied On</label>
                 <%= form.datetime_field :applied_at , class:"form-control", :required => true %>
+                
             </div>
         </div>
-        <div class="col">
+        <div class="col-sm-6 col-md-3">
             <div class="input-group">
                 <label class="input-group">Rejected On</label>
                 <%= form.datetime_field :rejected_at , class:"form-control" %>
             </div>
         </div>
-        <div class="col">
+        <div class="col-sm-6 col-md-3">
             <div class="input-group">
                 <label class="input-group">Interviewed On</label>
-                <%= form.datetime_field :interviewed_at , class:"form-control" %>
+                <%= form.datetime_field :interviewed_at , class:"form-control"%>
             </div>
         </div>
 
@@ -108,10 +115,12 @@
             </div>
         </div>
     </div>
-    <p>
-        <%= form.submit %>
-        <strong>Need a back / Cancel button here!  And maybe the primary tech for the position?  PHP? Python? Ruby? Other?</strong>
-    </p>
+    <!--div class="row mt-3 mb-8">
+        <div class="col mt-3 mb-3">
+            <%= form.submit  %>
+            <%= link_to '<button>Back</button>'.html_safe, 'javascript:history.back()', class:'ml-2 float-right' %>
+        </div>
+    </div-->
     <% end %>
 </div>
 <script>
