@@ -19,4 +19,16 @@ class ApplicationRecord < ActiveRecord::Base
             GROUP BY week_name
             ORDER BY year ASC, week ASC")
   end
+
+  def self.applied_per_campaign
+    return ApplicationRecord.connection.select_all("
+            SELECT
+                s.name AS search_site_name, 
+                p.company_name, p.posting_title, p.posting_location_city, p.posting_location_type, 
+                STRFTIME('%m-%d-%Y', p.applied_at) AS applied_on,
+                STRFTIME('%m-%d-%Y', p.rejected_at) AS rejected_on
+            FROM job_postings p
+            JOIN job_sites s ON p.job_site_id = s.id
+            WHERE p.applied_at > '2024-01-01'")
+  end
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'tips', to: 'static_pages#tips'
   resources :per_site_reports
   resources :per_week_reports
+  resources :per_campaign_reports
   resources :job_postings
   
   resources :job_sites do
