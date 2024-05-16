@@ -49,7 +49,8 @@
 </div>
 
 <div class="container mt-5">
-<h2>Add a Job Posting</h2>
+<h2 style='width:100%'>Add a Job Posting 
+  <button onclick="scrollToBottom()" class="btn btn-secondary mx-9 px-9" style="float:right">Scroll To Bottom</button></h2>
   <%= render 'job_postings/form' %>
 </div>
 
@@ -88,4 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //   alert("tree changed");
   // });   // executes when the SEARCH box is used.  But not before then.
 });
+
+function scrollToBottom() { 
+    window.scrollTo(0, document.body.scrollHeight)
+} 
 </script>
