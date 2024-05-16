@@ -1,0 +1,66 @@
+
+<div class="container-fluid p-1 bg-primary text-white text-center">
+  <h1>Email Opportunities </h1>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col">
+            <%= link_to "New Email Opportunity", new_email_opportunity_path, class:"btn btn-primary" %>
+        </div>
+    </div>
+    <table id='email_opportunity_dt' class="table table-striped" style="width:100%">
+        <thead>
+            <th>Job Title</th>
+            <th>Recruiter Name</th>
+            <!--th>Job Type</th-->
+            <th>Status</th>
+            <th>Location Type</th>
+            <th>City</th>
+            <!--th>Pay Rate</th-->
+            <th>Received On</th>
+            <th>Action</th>
+        </thead>
+
+        <tbody>
+        <% @email_opportunities.each do |email_opportunity| %>
+        <tr>
+            <td><%= email_opportunity.job_title %></td>
+            <td><%= email_opportunity.recruiter_name %></td>
+            <!--td><%= email_opportunity.job_type%></td--> 
+            <td><%= email_opportunity.opportunity_status %></td>
+            <td><%= email_opportunity.job_location_type %></td>
+            <td><%= email_opportunity.job_location_city %></td>
+            <!--td><%= email_opportunity.pay_rate %></td-->
+            <td data-order="<%= unless email_opportunity.email_received_at.nil? 
+              email_opportunity.email_received_at.strftime("%F %T") 
+              end %>" >
+              <%= unless email_opportunity.email_received_at.nil? 
+              email_opportunity.email_received_at.strftime("%a %b %d, %Y %r") 
+              end %></td>
+            <td>
+                <a href="/email_opportunities/<%= email_opportunity.id %>/edit">Edit</a>
+                <%= link_to "Delete", [email_opportunity], data: {
+                                turbo_method: :delete,
+                                turbo_confirm: "Are you sure?"
+                            } %>
+
+            </td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // JavaScript, NOT jquery... jquery not likely loaded yet!
+
+  console.log("email_opportunities/index.html.js ready func")
+      new DataTable('#email_opportunity_dt', {
+        order: [[2, 'asc']],
+        "pageLength": 25,
+        "autoWidth": true
+    });
+});
+</script>

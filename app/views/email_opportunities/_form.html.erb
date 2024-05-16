@@ -1,0 +1,98 @@
+<div class="container mt-2">
+<%= form_with model: @email_opportunity do |form| %>
+    <div class="row">
+        <div class="col-md-6 col-lg-3 mt-3">
+            <div class="input-group">
+            <label class="input-group"><strong>Recruiter Name</strong></label>
+            <%= form.text_field :recruiter_name , class:"form-control", :required => true %>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mt-3">
+            <div class="input-group">
+            <label class="input-group"><strong>Recruiter Company</strong></label>
+            <%= form.text_field :recruiter_company , class:"form-control", :required => true %>
+            </div>
+        </div>
+        <!--div class="col-sm-6 col-lg-2 mt-3">
+            <div class="input-group">
+                <label class="input-group"><strong>Sent Response?</strong></label>
+                <%= form.select :responded , ['Not Selected', 'Yes', 'No'], {}, { :class => "form-control" } %>
+            </div>
+        </div-->
+        <div class="col-md-6 col-lg-3 mt-3">
+            <div class="input-group">
+                <label class="input-group"><strong>Status</strong></label>
+                <%= form.select :opportunity_status, ['4 - No Response', '3 - Rejected', '2 - Awaiting Feedback', '1 - Actively Engaged'],
+                     {}, { :class => "form-control" } %>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mt-3">
+            <div class="input-group">
+            <label class="input-group"><strong>Email Received At</strong></label>
+            <%= form.datetime_field :email_received_at , class:"form-control", :required => true %>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-lg-6 mt-3">
+            <div class="input-group">
+                <label class="input-group"><strong>Job Title</strong></label>
+                <%= form.text_field :job_title , class:"form-control", :required => true %>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-2 mt-3">
+            <div class="input-group">
+                <label class="input-group"><strong>Employment Type</strong></label>
+                <%= form.select :job_type, ['Contract', 'Full-time', 'Freelance'], {}, { :class => "form-control" } %>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mt-3">
+            <div class="input-group">
+                <label class="input-group"><strong>Contract Duration</strong></label>
+                <%= form.text_field :job_duration , class:"form-control", :required => true %>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6 mt-3">
+            <div class="input-group">
+                <label class="input-group"><strong>Pay Rate</strong></label>
+                <%= form.text_field :pay_rate , class:"form-control", :required => true %>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-2 mt-3">
+            <div class="input-group">
+                <label class="input-group"><strong>Location Type</strong></label>
+                <%= form.select :job_location_type, ['On-Site', 'Hybrid', 'Remote'], {}, { :class => "form-control" } %>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mt-3">
+            <div class="input-group">
+                <label class="input-group"><strong>Location City</strong></label>
+                <%= form.text_field :job_location_city , class:"form-control", :required => true %>
+            </div>
+        </div>
+    </div>
+
+
+  <div class="row">
+    <div class="col">
+      <div class=" mb-3 mt-3 w3-padding w3-round ws-grey w3-border w3-padding-16">
+        <label class="input-group"><strong>Job Description</strong></label>
+        <%= form.text_area :job_description, class:"form-control", rows: 15, style:"margin-top:5px!important" %>
+      </div>
+    </div>
+  </div>
+
+  <%# <p>
+    To Add:
+    <ul>
+      <li>Show the logo (and update new image)</li>
+      <li>Active?</li>
+    </ul>
+  </p> %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</div>

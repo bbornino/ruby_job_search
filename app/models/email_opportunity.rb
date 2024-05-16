@@ -1,0 +1,2 @@
+class EmailOpportunity < ApplicationRecord
+end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :per_week_reports
   resources :per_campaign_reports
   resources :job_postings
+  resources :email_opportunities
   
   resources :job_sites do
     resources :job_postings

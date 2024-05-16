@@ -1,0 +1,2 @@
+module EmailOpportunitiesHelper
+end
