@@ -15,7 +15,7 @@ class JobSitesController < ApplicationController
     @job_site = JobSite.new(job_site_params)
 
     if @job_site.save
-      redirect_to @job_site
+      redirect_to action: "index"
     else
       render :new, status: :unprocessable_entity
     end

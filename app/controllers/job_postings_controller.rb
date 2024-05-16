@@ -36,7 +36,7 @@ class JobPostingsController < ApplicationController
 
     private
     def job_postings_params
-        params.require(:job_posting).permit(:company_name, :company_url, :posting_title, :posting_url, :posting_location_city, :posting_location_type, :employment_type, :posting_id, :pay_range, :applied_at, :rejected_at, :interviewed_at, :archive, :technology_stack, :posting_comments)
+        params.require(:job_posting).permit(:posting_title, :company_name, :posting_url,  :posting_status, :posting_location_city, :posting_location_type, :employment_type, :posting_id, :pay_range, :applied_at, :rejected_at, :interviewed_at, :archive, :technology_stack, :posting_comments)
     end
 
 end

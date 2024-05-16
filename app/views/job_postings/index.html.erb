@@ -4,12 +4,13 @@
 
 
 <div class="container mt-5">
-    <table id='job_postings_dt' class="table table-striped" style="width:100%">
+    <table id='job_postings_dt' class="table table-striped" >
         <thead>
             <th>Company Name</th>
             <th>Posting Title</th>
-            <th>Location Type</th>
-            <th>Pay Range</th>
+            <!--th>Location Type</th-->
+            <th>Posting Status</th>
+            <!--th>Pay Range</th-->
             <th>Applied On</th>
             <th>Rejected On</th>
         </thead>
@@ -19,8 +20,9 @@
         <tr>
           <td><%= link_to job_posting.company_name, job_posting %></td>
           <td><%= job_posting.posting_title %></td>
-          <td><%= job_posting.posting_location_type %></td>
-          <td><%= job_posting.pay_range %></td>
+          <!--td><%= job_posting.posting_location_type %></td-->
+          <td><%= job_posting.posting_status %></td>
+          <!--td><%= job_posting.pay_range %></td-->
           <td data-order="<%= unless job_posting.applied_at.nil? 
               job_posting.applied_at.strftime("%F %T") 
               end %>" >
@@ -46,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Hello World!");
   console.log("index.js ready func")
       new DataTable('#job_postings_dt', {
+        "autoWidth": false
     });
 });
 </script>

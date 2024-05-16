@@ -9,31 +9,39 @@
     <div class="row">
         <div class="col-sm-12 col-md-6">
             <div class="input-group">
-                <label class="input-group">Company Name</label>
-                <%= form.text_field :company_name , class:"form-control", :required => true %>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <div class="input-group">
-                <label class="input-group">Company URL</label>
-                <%= form.text_field :company_url , class:"form-control" %>
-            </div>
-        </div>
-    </div>
-    <div class="row pt-3">
-        <div class="col-sm-12 col-md-6">
-            <div class="input-group">
                 <label class="input-group">Posting Title</label>
                 <%= form.text_field :posting_title , class:"form-control", :required => true %>
             </div>
         </div>
         <div class="col-sm-12 col-md-6">
             <div class="input-group">
+                <label class="input-group">Company Name</label>
+                <%= form.text_field :company_name , class:"form-control", :required => true %>
+            </div>
+        </div>
+        <!--div class="col-sm-12 col-md-6">
+            <div class="input-group">
+                <label class="input-group">Company URL</label>
+                <%= form.text_field :company_url , class:"form-control" %>
+            </div>
+        </div-->
+        
+    </div>
+    <div class="row pt-3">
+        
+        <div class="col-sm-12 col-md-9">
+            <div class="input-group">
                 <label class="input-group">Posting URL</label>
                 <%= form.text_field :posting_url , class:"form-control" %>
             </div>
         </div>
-        
+        <div class="col-sm-12 col-md-3">
+            <div class="input-group">
+                <label class="input-group">Status</label>
+                <%= form.select :posting_status, ['4 - No Response', '3 - Rejected', '2 - Awaiting Feedback', '1 - Actively Engaged'],
+                     {}, { :class => "form-control" } %>
+            </div>
+        </div>
     </div>
 
     <div class="row pt-3">
@@ -52,13 +60,13 @@
         <div class="col-3">
             <div class="input-group">
                 <label class="input-group">Location Type</label>
-                <%= form.select :posting_location_type, ['On-Site', 'Hybrid', 'Remote'] %>
+                <%= form.select :posting_location_type, ['On-Site', 'Hybrid', 'Remote'], {}, { :class => "form-control" } %>
             </div>
         </div>
         <div class="col-3">
             <div class="input-group">
                 <label class="input-group">Employment Type</label>
-                <%= form.select :employment_type, ['Full-time', 'Freelance', 'Contract'] %>
+                <%= form.select :employment_type, ['Full-time', 'Freelance', 'Contract'], {}, { :class => "form-control" } %>
             </div>
         </div>
         <!--div class="col-2">
@@ -71,26 +79,26 @@
     </div>
 
     <div class="row pt-3">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-md-6 col-lg-3">
             <div class="input-group">
                 <label class="input-group">Pay Range</label>
                 <%= form.text_field :pay_range , class:"form-control", :required => true %>
             </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-md-6 col-lg-3">
             <div class="input-group">
                 <label class="input-group">Applied On</label>
                 <%= form.datetime_field :applied_at , class:"form-control", :required => true %>
                 
             </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-md-6 col-lg-3">
             <div class="input-group">
                 <label class="input-group">Rejected On</label>
                 <%= form.datetime_field :rejected_at , class:"form-control" %>
             </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-md-6 col-lg-3">
             <div class="input-group">
                 <label class="input-group">Interviewed On</label>
                 <%= form.datetime_field :interviewed_at , class:"form-control"%>
@@ -111,7 +119,7 @@
         <div class="col">
             <div class="  w3-padding w3-round ws-grey w3-border w3-padding-16">
                 <%= form.label :posting_comments %>
-                <%= form.text_area :posting_comments, rows: 10, class:"form-control",style:"margin-top:5px!important" %>
+                <%= form.text_area :posting_comments, rows: 30, class:"form-control",style:"margin-top:5px!important" %>
             </div>
         </div>
     </div>
