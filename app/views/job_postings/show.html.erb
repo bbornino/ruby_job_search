@@ -12,11 +12,15 @@
     </div>
 
     <dl class="row mt-5">
-        <dt class="col-sm-2">Company Name</dt>
-        <dd class="col-sm-4"><%= @job_posting.company_name %></dd>
+        
         <dt class="col-sm-2"> Posting Title </dt>
         <dd class="col-sm-4"><%= @job_posting.posting_title %></dd>
+        <dt class="col-sm-2"> Status </dt>
+        <dd class="col-sm-4"><%= @job_posting.posting_status %></dd>
 
+        <dt class="col-sm-2">Company Name</dt>
+        <dd class="col-sm-4"><%= @job_posting.company_name %></dd>
+        <dt class="col-sm-6">
         <dt class="col-sm-2"> Posting City </dt>
         <dd class="col-sm-4"><%= @job_posting.posting_location_city %></dd>
         <dt class="col-sm-2"> Location Type </dt>
@@ -28,9 +32,12 @@
         <dd class="col-sm-4"><%= @job_posting.pay_range %></dd>
 
         <dt class="col-sm-2"> Applied On </dt>
-        <dd class="col-sm-4"><%= @job_posting.applied_at %></dd>
+        <dd class="col-sm-4"><%= @job_posting.applied_at.strftime("%a %b %d, %Y %r") %></dd>
         <dt class="col-sm-2"> Rejected On </dt>
-        <dd class="col-sm-4"><%= @job_posting.rejected_at %></dd>
+        <dd class="col-sm-4"><%= @job_posting.rejected_at.strftime("%a %b %d, %Y %r") %></dd>
+
+        <dt class="col-sm-2"> Technology Stack </dt>
+        <dd class="col-sm-10"><%= @job_posting.technology_stack %></dd>
 
         <dt class="col-sm-2"> Posting Comments </dt>
         <dd class="col-sm-10"><%= @job_posting.posting_comments %></dd>
