@@ -13,6 +13,7 @@
             <!--th>Pay Range</th-->
             <th>Applied On</th>
             <th>Rejected On</th>
+            <th>Interviewed On</th>
         </thead>
 
         <tbody>
@@ -27,14 +28,21 @@
               job_posting.applied_at.strftime("%F %T") 
               end %>" >
                 <%= unless job_posting.applied_at.nil? 
-                job_posting.applied_at.strftime("%a %b %d, %Y %r") 
+                job_posting.applied_at.strftime("%b %d, %Y") 
                 end %>
           </td>
           <td data-order="<%= unless job_posting.rejected_at.nil? 
               job_posting.rejected_at.strftime("%F %T") 
               end %>" >
                 <%= unless job_posting.rejected_at.nil? 
-                job_posting.rejected_at.strftime("%a %b %d, %Y %r") 
+                job_posting.rejected_at.strftime("%b %d, %Y") 
+                end %>
+          </td>
+          <td data-order="<%= unless job_posting.interviewed_at.nil? 
+              job_posting.interviewed_at.strftime("%F %T") 
+              end %>" >
+                <%= unless job_posting.interviewed_at.nil? 
+                job_posting.interviewed_at.strftime("%b %d, %Y") 
                 end %>
           </td>
         </tr>
