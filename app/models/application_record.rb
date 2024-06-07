@@ -26,6 +26,7 @@ class ApplicationRecord < ActiveRecord::Base
                 s.name AS search_site_name, 
                 p.company_name, p.posting_title, p.posting_location_city, p.posting_location_type, 
                 STRFTIME('%m-%d-%Y', p.applied_at) AS applied_on,
+                STRFTIME('%m-%d-%Y', p.interviewed_at) AS interviewed_on,
                 STRFTIME('%m-%d-%Y', p.rejected_at) AS rejected_on
             FROM job_postings p
             JOIN job_sites s ON p.job_site_id = s.id
