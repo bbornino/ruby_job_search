@@ -41,7 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Hello World!");
   console.log("index.js ready func")
       new DataTable('#per_campaign_report_dt', {
-        pageLength: 10
+        pageLength: 10,
+        lengthMenu: [
+            [10, 25, 50, 100, -1],
+            [10, 25, 50, 100, 'All']
+        ]
     });
 });
 </script>
