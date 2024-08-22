@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
     def tips
     end
+
+    def boolean
+    end
 end

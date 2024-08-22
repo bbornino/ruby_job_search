@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root "job_sites#index"
   get 'intro', to: 'static_pages#intro'
   get 'tips', to: 'static_pages#tips'
+  get 'boolean', to: 'static_pages#boolean'
   resources :per_site_reports
   resources :per_week_reports
   resources :per_campaign_reports
