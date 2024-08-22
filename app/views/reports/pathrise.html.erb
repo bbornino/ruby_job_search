@@ -1,17 +1,17 @@
 
-<div class="container-fluid p-1 bg-primary text-white text-center">
-  <h1>Postings Applied in 2024 Spring </h1>
+<div class="mt-5 text-center">
+  <h1>Postings Applied in 2024</h1>
 </div>
 
-
 <div class="container mt-5">
+    <p> These are all of the postings that I have applied for since I started using Pathrise.  (Pathrise has applied to some on my behalf)</p>
+
     <table id='per_campaign_report_dt' class="table table-striped" style="width:100%">
         <thead>
             <th>#</th>
-            <th>Search Site</th>
             <th>Company Name</th>
-            <th>City</th>
-            <th>Type</th>
+            <th>Posting Title</th>
+            <th>Posting Status</th>
             <th>Applied On</th>
             <th>Rejected On</th>
             <th>Interviewed On</th>
@@ -22,10 +22,9 @@
         <% @reportData.each do |report_row| %>
         <tr>
             <td><%= row_num %></td>
-            <td><%= report_row['search_site_name'] %></td>
             <td><%= report_row['company_name'] %></td>
-            <td><%= report_row['posting_location_city'] %></td>
-            <td><%= report_row['posting_location_type'] %></td>
+            <td><%= report_row['posting_title'] %></td>
+            <td><%= report_row['posting_status'] %></td>
             <td><%= report_row['applied_on'] %></td>
             <td><%= report_row['rejected_on'] %></td>
             <td><%= report_row['interviewed_on'] %></td>

@@ -32,4 +32,15 @@ class ApplicationRecord < ActiveRecord::Base
             JOIN job_sites s ON p.job_site_id = s.id
             WHERE p.applied_at > '2024-01-01'")
   end
+
+  def self.applied_pathrise
+    return ApplicationRecord.connection.select_all("
+            SELECT
+                p.company_name, p.posting_title, p.posting_status,
+                STRFTIME('%m-%d-%Y', p.applied_at) AS applied_on,
+                STRFTIME('%m-%d-%Y', p.interviewed_at) AS interviewed_on,
+                STRFTIME('%m-%d-%Y', p.rejected_at) AS rejected_on
+            FROM job_postings p
+            WHERE p.applied_at > '2024-07-20'")
+  end
 end

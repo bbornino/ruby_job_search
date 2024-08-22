@@ -1,0 +1,52 @@
+
+<div class="mt-5 text-center">
+  <h1>Postings Applied in 2024</h1>
+</div>
+
+
+<div class="container mt-5">
+    <p>Late 2023, I got a job at NameHero.  Early 2024, I was back at the job hunt.  These are all of the listings that <strong>I have</strong> applied to since then. (Pathrise has applied to some on my behalf)</p>
+    <table id='per_campaign_report_dt' class="table table-striped" style="width:100%">
+        <thead>
+            <th>#</th>
+            <th>Search Site</th>
+            <th>Company Name</th>
+            <th>City</th>
+            <th>Type</th>
+            <th>Applied On</th>
+            <th>Rejected On</th>
+            <th>Interviewed On</th>
+        </thead>
+
+        <tbody>
+        <% row_num = 1 %>
+        <% @reportData.each do |report_row| %>
+        <tr>
+            <td><%= row_num %></td>
+            <td><%= report_row['search_site_name'] %></td>
+            <td><%= report_row['company_name'] %></td>
+            <td><%= report_row['posting_location_city'] %></td>
+            <td><%= report_row['posting_location_type'] %></td>
+            <td><%= report_row['applied_on'] %></td>
+            <td><%= report_row['rejected_on'] %></td>
+            <td><%= report_row['interviewed_on'] %></td>
+        </tr>
+        <% row_num += 1 %>
+        <% end %>
+        </tbody>
+    </table>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // JavaScript, NOT jquery... jquery not likely loaded yet!
+  console.log("Hello World!");
+  console.log("index.js ready func")
+      new DataTable('#per_campaign_report_dt', {
+        pageLength: 10,
+        lengthMenu: [
+            [10, 25, 50, 100, -1],
+            [10, 25, 50, 100, 'All']
+        ]
+    });
+});
+</script>

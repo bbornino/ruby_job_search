@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   get 'intro', to: 'static_pages#intro'
   get 'tips', to: 'static_pages#tips'
   get 'boolean', to: 'static_pages#boolean'
-  resources :per_site_reports
-  resources :per_week_reports
-  resources :per_campaign_reports
+  get 'reports/per_site', to: 'reports#per_site'
+  get 'reports/per_week', to: 'reports#per_week'
+  get 'reports/per_campaign', to: 'reports#per_campaign'
+  get 'reports/pathrise', to: 'reports#pathrise'
+
   resources :job_postings
   resources :email_opportunities
   
