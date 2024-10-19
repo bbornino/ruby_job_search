@@ -26,7 +26,9 @@
             <td><%= job_site.url %></td>
             <td><%= job_site.rating %></td>
             <td><%= job_site.review_text %></td>
-            <td><%= job_site.last_visited_at.strftime("%a %b %d, %Y")  %></td>
+            <td data-order="<%= unless job_site.last_visited_at.nil? 
+              job_site.last_visited_at.strftime("%F %T") 
+              end %>"><%= job_site.last_visited_at.strftime("%a %b %d, %Y")  %></td>
         </tr>
         <% end %>
         </tbody>
